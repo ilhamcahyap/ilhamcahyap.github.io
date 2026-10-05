@@ -1,1000 +1,1767 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio akademik pribadi — pendidikan, penelitian, publikasi, proyek, dan kegiatan.">
-<title>ilhamcp511 — Academic Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+          content="Portfolio pribadi Ilham Cahya Purnama.">
 
-<style>
-:root{
-    --cream:#fff8ed;
-    --cream-2:#f7ead7;
-    --white:#fff;
-    --orange:#d2691e;
-    --orange-dark:#a94f13;
-    --ochre:#b8860b;
-    --brown:#8b4513;
-    --brown-dark:#3b2416;
-    --text:#38261b;
-    --muted:#765f4d;
-    --border:#cdb89d;
-    --dark:#302015;
-    --shadow:0 10px 30px rgba(59,36,22,.08);
-    --container:1180px;
-    --transition:.25s ease;
-}
+    <title>Ilham Cahya Purnama</title>
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:82px}
-body{
-    font-family:"Inter",sans-serif;
-    color:var(--text);
-    background:var(--cream);
-    line-height:1.7;
-    overflow-x:hidden;
-}
-a{color:inherit;text-decoration:none}
-button,input,textarea{font:inherit}
-img{display:block;width:100%}
-.container{width:min(var(--container),calc(100% - 48px));margin:auto}
-.serif{font-family:"Playfair Display",Georgia,serif}
-.portrait-frame img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-.eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    color:var(--orange-dark);
-    font-size:.7rem;
-    font-weight:700;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-}
-.eyebrow::before{
-    content:"";
-    width:28px;height:2px;
-    background:var(--orange);
-}
-.section{padding:95px 0}
-.section-heading{max-width:720px;margin-bottom:42px}
-.section-heading h2{
-    margin-top:8px;
-    font-family:"Playfair Display",Georgia,serif;
-    font-size:clamp(2rem,4vw,3.2rem);
-    line-height:1.15;
-    color:var(--brown-dark);
-}
-.section-heading p{margin-top:14px;color:var(--muted);max-width:650px}
+    <style>
 
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    min-height:44px;
-    padding:10px 18px;
-    border:1px solid transparent;
-    border-radius:4px;
-    font-size:.82rem;
-    font-weight:700;
-    cursor:pointer;
-    transition:all var(--transition);
-}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{color:white;background:var(--brown-dark)}
-.btn-primary:hover{background:var(--orange-dark)}
-.btn-outline{color:var(--brown-dark);border-color:var(--brown-dark)}
-.btn-outline:hover{color:white;background:var(--brown-dark)}
-.btn-light{color:var(--brown-dark);background:var(--cream)}
+        /* ================= RESET ================= */
 
-/* NAVBAR */
-.navbar{
-    position:sticky;top:0;z-index:1000;
-    background:rgba(255,248,237,.95);
-    border-bottom:1px solid var(--border);
-    backdrop-filter:blur(12px);
-}
-.nav-inner{
-    min-height:72px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-.brand{display:flex;flex-direction:column;line-height:1.15}
-.brand strong{font-family:"Playfair Display",serif;font-size:1.15rem;color:var(--brown-dark)}
-.brand span{
-    margin-top:3px;color:var(--orange-dark);
-    font-size:.6rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase
-}
-.nav-links{display:flex;gap:25px;list-style:none}
-.nav-links a{
-    position:relative;
-    padding:25px 0;
-    color:var(--muted);
-    font-size:.77rem;
-    font-weight:600
-}
-.nav-links a::after{
-    content:"";position:absolute;left:0;right:100%;bottom:17px;
-    height:2px;background:var(--orange);transition:right var(--transition)
-}
-.nav-links a:hover,.nav-links a.active{color:var(--brown-dark)}
-.nav-links a:hover::after,.nav-links a.active::after{right:0}
-.menu-toggle{
-    display:none;width:42px;height:42px;
-    border:1px solid var(--border);border-radius:4px;
-    color:var(--brown-dark);background:var(--cream);cursor:pointer
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* HERO */
-.hero{
-    position:relative;
-    min-height:680px;
-    display:flex;
-    align-items:center;
-    padding:90px 0;
-    overflow:hidden;
-    border-bottom:1px solid var(--border)
-}
-.hero::before{
-    content:"";position:absolute;width:510px;height:510px;
-    right:-180px;top:-190px;border:1px solid rgba(210,105,30,.25);border-radius:50%
-}
-.hero::after{
-    content:"";position:absolute;width:300px;height:300px;
-    left:-180px;bottom:-180px;border:1px solid rgba(184,134,11,.25);border-radius:50%
-}
-.hero-grid{
-    position:relative;z-index:1;
-    display:grid;grid-template-columns:1.15fr .85fr;
-    align-items:center;gap:75px
-}
-.hero-copy h1{
-    max-width:760px;margin:15px 0 20px;
-    font-family:"Playfair Display",serif;
-    font-size:clamp(3.1rem,7vw,6.4rem);
-    line-height:.98;letter-spacing:-.045em;color:var(--brown-dark)
-}
-.hero-copy h1 span{color:var(--orange)}
-.hero-copy>p{max-width:650px;color:var(--muted);font-size:1rem}
-.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.hero-meta{
-    display:flex;flex-wrap:wrap;gap:20px;
-    margin-top:38px;padding-top:22px;border-top:1px solid var(--border)
-}
-.meta-item strong{
-    display:block;font-size:.68rem;color:var(--brown-dark);
-    text-transform:uppercase;letter-spacing:.08em
-}
-.meta-item span{color:var(--muted);font-size:.78rem}
-.hero-visual{
-    position:relative;min-height:510px;
-    display:flex;align-items:center;justify-content:center
-}
-.portrait-frame{
-    position:relative;width:min(390px,100%);aspect-ratio:4/5;
-    padding:14px;background:white;border:1px solid var(--brown-dark);
-    box-shadow:18px 18px 0 var(--orange);transform:rotate(2deg)
-}
-.portrait-placeholder{
-    height:100%;display:flex;align-items:center;justify-content:center;
-    padding:30px;text-align:center;color:var(--cream);
-    background:linear-gradient(145deg,rgba(210,105,30,.3),rgba(59,36,22,.9)),
-               repeating-linear-gradient(45deg,transparent 0 14px,rgba(255,255,255,.04) 14px 16px)
-}
-.portrait-placeholder .initial{
-    font-family:"Playfair Display",serif;font-size:7rem;line-height:1;color:#fff4df
-}
-.portrait-placeholder p{margin-top:15px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
-.leaf{
-    position:absolute;width:54px;height:75px;
-    border-radius:80% 0 80% 0;background:var(--ochre);opacity:.85;transform:rotate(35deg)
-}
-.leaf.one{right:6%;top:12%}
-.leaf.two{left:4%;bottom:12%;background:var(--orange);transform:rotate(-28deg) scale(.7)}
-.leaf.three{right:8%;bottom:10%;background:var(--brown);transform:rotate(80deg) scale(.55)}
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
 
-/* ABOUT */
-.about{background:white;border-bottom:1px solid var(--border)}
-.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:70px;align-items:start}
-.about-label{position:sticky;top:110px}
-.about-label h2{
-    margin-top:12px;font-family:"Playfair Display",serif;
-    font-size:clamp(2.3rem,4vw,3.8rem);line-height:1.05;color:var(--brown-dark)
-}
-.about-card{padding:35px;border:1px solid var(--border);box-shadow:var(--shadow)}
-.about-card p+p{margin-top:18px}
-.quote{
-    margin:28px 0;padding:22px 24px;
-    border-left:4px solid var(--orange);
-    background:var(--cream-2);
-    color:var(--brown-dark);
-    font-family:"Playfair Display",serif;font-size:1.2rem
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fffaf3;
+            color: #3b2416;
+            line-height: 1.7;
+        }
 
-/* EDUCATION */
-.timeline{position:relative;max-width:900px;margin:auto}
-.timeline::before{
-    content:"";position:absolute;left:110px;top:5px;bottom:5px;
-    width:1px;background:var(--border)
-}
-.timeline-item{
-    position:relative;display:grid;grid-template-columns:110px 1fr;
-    gap:45px;padding-bottom:42px
-}
-.timeline-year{padding-top:4px;color:var(--orange-dark);font-size:.78rem;font-weight:800;letter-spacing:.08em}
-.timeline-content{
-    position:relative;padding:24px 25px;
-    border:1px solid var(--border);background:white;box-shadow:var(--shadow)
-}
-.timeline-content::before{
-    content:"";position:absolute;left:-51px;top:28px;
-    width:11px;height:11px;border:3px solid var(--cream);
-    border-radius:50%;background:var(--orange);box-shadow:0 0 0 1px var(--orange)
-}
-.timeline-content h3{font-family:"Playfair Display",serif;font-size:1.35rem;color:var(--brown-dark)}
-.timeline-content .place{margin-top:3px;color:var(--orange-dark);font-size:.8rem;font-weight:700}
-.timeline-content p{margin-top:12px;color:var(--muted);font-size:.86rem}
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-/* RESEARCH */
-.research{background:var(--cream-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.research-card{
-    padding:28px;min-height:190px;background:white;border:1px solid var(--border);
-    transition:all var(--transition)
-}
-.research-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.research-number{color:var(--ochre);font-size:.68rem;font-weight:800;letter-spacing:.1em}
-.research-icon{margin:14px 0 8px;font-size:1.25rem;color:var(--orange)}
-.research-card h3{font-family:"Playfair Display",serif;font-size:1.3rem;color:var(--brown-dark)}
-.research-card p{margin-top:8px;color:var(--muted);font-size:.82rem}
-.research-card.wide{grid-column:span 2;min-height:auto}
+        img {
+            display: block;
+            width: 100%;
+        }
 
-/* FEATURED */
-.featured{
-    position:relative;padding:95px 0;overflow:hidden;
-    color:var(--cream);background:var(--dark)
-}
-.featured::after{
-    content:"";position:absolute;width:420px;height:420px;
-    right:-180px;bottom:-230px;border:1px solid rgba(210,105,30,.35);border-radius:50%
-}
-.featured-grid{
-    position:relative;z-index:1;
-    display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center
-}
-.featured .eyebrow{color:#e3b35a}
-.featured h2{
-    margin-top:12px;font-family:"Playfair Display",serif;
-    font-size:clamp(2.3rem,5vw,4rem);line-height:1.1
-}
-.featured-intro{color:#d8c9b9;margin-top:16px}
-.featured-box{padding:35px;background:#3b2a1e;border:1px solid rgba(255,255,255,.16)}
-.featured-box .tag{
-    display:inline-block;padding:5px 9px;color:#3b2416;background:#e3b35a;
-    font-size:.63rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase
-}
-.featured-box h3{margin-top:18px;font-family:"Playfair Display",serif;font-size:1.75rem}
-.featured-box p{margin-top:13px;color:#d8c9b9;font-size:.86rem}
-.featured-meta{
-    display:flex;flex-wrap:wrap;gap:25px;margin-top:22px;padding-top:18px;
-    border-top:1px solid rgba(255,255,255,.12);color:#cbb9a7;font-size:.74rem
-}
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+        }
 
-/* PUBLICATIONS */
-.publication-list{border-top:1px solid var(--border)}
-.publication{
-    display:grid;grid-template-columns:60px 1fr auto;gap:25px;align-items:center;
-    padding:25px 0;border-bottom:1px solid var(--border);transition:all var(--transition)
-}
-.publication:hover{padding-left:12px;padding-right:12px;background:var(--cream-2)}
-.pub-number{color:var(--orange);font-size:.76rem;font-weight:800}
-.publication h3{font-family:"Playfair Display",serif;font-size:1.18rem;color:var(--brown-dark)}
-.publication p{margin-top:4px;color:var(--muted);font-size:.76rem}
-.pub-year{color:var(--ochre);font-size:.76rem;font-weight:800}
 
-/* GALLERY */
-.gallery{background:white;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.gallery-card{overflow:hidden;border:1px solid var(--border);background:var(--cream);box-shadow:var(--shadow)}
-.gallery-image{
-    position:relative;aspect-ratio:4/3;overflow:hidden;
-    display:flex;align-items:center;justify-content:center;color:var(--cream);
-    background:linear-gradient(135deg,rgba(139,69,19,.9),rgba(210,105,30,.65))
-}
-.gallery-image span{font-family:"Playfair Display",serif;font-size:3rem;opacity:.75}
-.gallery-card:nth-child(2) .gallery-image{background:linear-gradient(135deg,rgba(184,134,11,.95),rgba(59,36,22,.85))}
-.gallery-card:nth-child(3) .gallery-image{background:linear-gradient(135deg,rgba(210,105,30,.9),rgba(59,36,22,.9))}
-.gallery-card:nth-child(4) .gallery-image{background:linear-gradient(135deg,rgba(59,36,22,.95),rgba(139,69,19,.75))}
-.gallery-card:nth-child(5) .gallery-image{background:linear-gradient(135deg,rgba(210,105,30,.75),rgba(184,134,11,.8))}
-.gallery-card:nth-child(6) .gallery-image{background:linear-gradient(135deg,rgba(139,69,19,.8),rgba(184,134,11,.8))}
-.gallery-caption{padding:15px 16px}
-.gallery-caption h3{font-family:"Playfair Display",serif;color:var(--brown-dark);font-size:1rem}
-.gallery-caption p{margin-top:3px;color:var(--muted);font-size:.72rem}
+        /* ================= GLOBAL ================= */
 
-/* SCHEDULE */
-.schedule-wrap{overflow-x:auto;border:1px solid var(--border);background:white;box-shadow:var(--shadow)}
-.schedule{width:100%;min-width:720px;border-collapse:collapse}
-.schedule th,.schedule td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--border);font-size:.77rem}
-.schedule th{color:var(--cream);background:var(--brown-dark);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase}
-.schedule tr:last-child td{border-bottom:0}
-.schedule tr:hover td{background:var(--cream-2)}
-.date{color:var(--orange-dark);font-weight:800}
-.event-name{color:var(--brown-dark);font-weight:700}
-.status{
-    display:inline-block;padding:4px 8px;border-radius:3px;
-    color:var(--brown-dark);background:#ead49d;font-size:.6rem;font-weight:800;letter-spacing:.06em
-}
-.status.done{color:#5d3c28;background:#ded2c4}
+        .section {
+            padding: 90px 0;
+        }
 
-/* CONTACT */
-.contact{background:var(--cream-2);border-top:1px solid var(--border)}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px}
-.contact-copy h2{
-    margin-top:12px;font-family:"Playfair Display",serif;
-    font-size:clamp(2.2rem,4vw,3.7rem);line-height:1.1;color:var(--brown-dark)
-}
-.contact-copy>p{margin-top:16px;color:var(--muted);max-width:500px}
-.contact-list{margin-top:30px;display:grid;gap:14px}
-.contact-item{display:flex;gap:15px;align-items:flex-start}
-.contact-icon{
-    width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;
-    color:white;background:var(--brown-dark);border-radius:4px;font-size:.78rem
-}
-.contact-item strong{display:block;color:var(--brown-dark);font-size:.75rem}
-.contact-item span{color:var(--muted);font-size:.77rem}
-.contact-form{padding:32px;background:white;border:1px solid var(--border);box-shadow:var(--shadow)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-.field{margin-bottom:16px}
-.field label{display:block;margin-bottom:6px;color:var(--brown-dark);font-size:.71rem;font-weight:700}
-.field input,.field textarea{
-    width:100%;padding:12px 13px;border:1px solid var(--border);border-radius:3px;
-    outline:none;color:var(--text);background:var(--cream);font-size:.8rem
-}
-.field input:focus,.field textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(210,105,30,.1)}
-.field textarea{min-height:130px;resize:vertical}
-.form-message{display:none;margin-top:12px;color:var(--orange-dark);font-size:.75rem}
+        .section-heading {
+            margin-bottom: 45px;
+            max-width: 700px;
+        }
 
-/* FOOTER */
-footer{color:#dbcbbb;background:var(--brown-dark)}
-.footer-main{padding:55px 0 38px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:45px}
-.footer-brand h2{font-family:"Playfair Display",serif;color:var(--cream);font-size:1.7rem}
-.footer-brand p{max-width:390px;margin-top:10px;color:#bca997;font-size:.77rem}
-.footer-col h3{margin-bottom:13px;color:var(--cream);font-size:.73rem;letter-spacing:.1em;text-transform:uppercase}
-.footer-col a{display:block;width:max-content;margin:5px 0;color:#bca997;font-size:.75rem;transition:color var(--transition)}
-.footer-col a:hover{color:#e3b35a}
-.footer-bottom{
-    padding:18px 0;border-top:1px solid rgba(255,255,255,.12);
-    display:flex;justify-content:space-between;gap:20px;color:#9e8977;font-size:.67rem
-}
+        .eyebrow {
+            color: #c65d16;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
 
-/* BACK TO TOP */
-.back-top{
-    position:fixed;right:22px;bottom:22px;z-index:900;
-    width:42px;height:42px;display:grid;place-items:center;
-    border:1px solid var(--brown-dark);border-radius:4px;
-    color:var(--cream);background:var(--brown-dark);
-    opacity:0;visibility:hidden;transform:translateY(10px);cursor:pointer;transition:all var(--transition)
-}
-.back-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+        .section-heading h2 {
+            font-size: 38px;
+            line-height: 1.2;
+        }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-    .nav-links{
-        position:absolute;left:15px;right:15px;top:calc(100% + 1px);
-        display:none;flex-direction:column;gap:0;padding:10px 18px;
-        border:1px solid var(--border);background:var(--cream);box-shadow:var(--shadow)
-    }
-    .nav-links.open{display:flex}
-    .nav-links a{display:block;padding:12px 0}
-    .nav-links a::after{bottom:5px}
-    .menu-toggle{display:block}
-    .hero-grid,.featured-grid,.contact-grid{grid-template-columns:1fr}
-    .hero{min-height:auto}
-    .hero-copy{order:1}
-    .hero-visual{order:2;min-height:460px}
-    .about-grid{grid-template-columns:1fr;gap:35px}
-    .about-label{position:static}
-    .footer-main{grid-template-columns:1fr 1fr}
-    .footer-brand{grid-column:span 2}
-}
-@media(max-width:680px){
-    .container{width:min(100% - 30px,var(--container))}
-    .section{padding:70px 0}
-    .hero{padding:70px 0}
-    .hero-copy h1{font-size:clamp(2.8rem,15vw,4.5rem)}
-    .hero-meta{display:grid;grid-template-columns:1fr 1fr}
-    .portrait-frame{width:min(300px,82%);box-shadow:12px 12px 0 var(--orange)}
-    .research-grid{grid-template-columns:1fr}
-    .research-card.wide{grid-column:auto}
-    .timeline::before{left:8px}
-    .timeline-item{display:block;padding-left:35px}
-    .timeline-year{margin-bottom:9px}
-    .timeline-content::before{left:-32px}
-    .gallery-grid{grid-template-columns:1fr}
-    .publication{grid-template-columns:38px 1fr;gap:15px}
-    .pub-year{grid-column:2}
-    .form-row{grid-template-columns:1fr;gap:0}
-    .footer-main{grid-template-columns:1fr;gap:30px}
-    .footer-brand{grid-column:auto}
-    .footer-bottom{flex-direction:column}
-}
-</style>
+        .section-heading p {
+            margin-top: 12px;
+            color: #765f4d;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: .2s;
+        }
+
+        .btn-primary {
+            background: #3b2416;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c65d16;
+        }
+
+        .btn-outline {
+            border: 1px solid #3b2416;
+            color: #3b2416;
+        }
+
+        .btn-outline:hover {
+            background: #3b2416;
+            color: white;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fffaf3;
+            border-bottom: 1px solid #e4d8ca;
+        }
+
+        .nav-inner {
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand strong {
+            font-size: 18px;
+        }
+
+        .brand span {
+            margin-top: 4px;
+            color: #c65d16;
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #765f4d;
+            font-size: 13px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #c65d16;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid #cdb89d;
+            background: transparent;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 680px;
+
+            display: flex;
+            align-items: center;
+
+            border-bottom: 1px solid #e4d8ca;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-copy h1 {
+            margin: 12px 0 20px;
+
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: .98;
+            letter-spacing: -3px;
+        }
+
+        .hero-copy h1 span {
+            color: #c65d16;
+        }
+
+        .hero-copy > p {
+            max-width: 620px;
+            color: #765f4d;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 30px;
+
+            margin-top: 35px;
+            padding-top: 20px;
+
+            border-top: 1px solid #d8c8b8;
+        }
+
+        .meta-item strong {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .meta-item span {
+            color: #765f4d;
+            font-size: 12px;
+        }
+
+
+        /* ================= FOTO ================= */
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+        }
+
+        .portrait-frame {
+            width: 330px;
+            height: 420px;
+
+            padding: 8px;
+
+            background: white;
+            border: 1px solid #3b2416;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: white;
+            border-bottom: 1px solid #e4d8ca;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 60px;
+        }
+
+        .about-label h2 {
+            font-size: 45px;
+            line-height: 1.05;
+        }
+
+        .about-card {
+            max-width: 700px;
+        }
+
+        .about-card p {
+            color: #765f4d;
+        }
+
+        .about-card p + p {
+            margin-top: 18px;
+        }
+
+        .quote {
+            margin: 25px 0;
+            padding: 18px 20px;
+
+            border-left: 3px solid #c65d16;
+
+            background: #f7ead7;
+            color: #3b2416;
+
+            font-style: italic;
+        }
+
+
+        /* ================= GALERI ================= */
+
+        .gallery {
+            background: white;
+
+            border-top: 1px solid #e4d8ca;
+            border-bottom: 1px solid #e4d8ca;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .gallery-card {
+            border: 1px solid #d8c8b8;
+            background: #fffaf3;
+        }
+
+        .gallery-image {
+            aspect-ratio: 4 / 3;
+
+            overflow: hidden;
+            background: #ead8c2;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: .3s;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-caption {
+            padding: 15px;
+        }
+
+        .gallery-caption h3 {
+            font-size: 16px;
+        }
+
+        .gallery-caption p {
+            margin-top: 4px;
+            color: #765f4d;
+            font-size: 12px;
+        }
+
+
+        /* ================= JADWAL ================= */
+
+        .schedule-wrap {
+            overflow-x: auto;
+
+            border: 1px solid #d8c8b8;
+            background: white;
+        }
+
+        .schedule {
+            width: 100%;
+            min-width: 720px;
+
+            border-collapse: collapse;
+        }
+
+        .schedule th,
+        .schedule td {
+            padding: 14px 16px;
+
+            text-align: left;
+
+            border-bottom: 1px solid #e4d8ca;
+
+            font-size: 13px;
+        }
+
+        .schedule th {
+            background: #3b2416;
+            color: white;
+
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        .schedule tr:hover td {
+            background: #f7ead7;
+        }
+
+        .date {
+            color: #c65d16;
+            font-weight: bold;
+        }
+
+        .event-name {
+            font-weight: bold;
+        }
+
+        .status {
+            display: inline-block;
+
+            padding: 3px 7px;
+
+            background: #ead49d;
+            color: #3b2416;
+
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #f7ead7;
+            border-top: 1px solid #e4d8ca;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .contact-copy {
+            max-width: 700px;
+        }
+
+        .contact-copy h2 {
+            margin-top: 10px;
+            font-size: 42px;
+        }
+
+        .contact-copy > p {
+            margin-top: 12px;
+            color: #765f4d;
+        }
+
+        .contact-list {
+            margin-top: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+
+            display: grid;
+            place-items: center;
+
+            background: #3b2416;
+            color: white;
+
+            font-size: 12px;
+        }
+
+        .contact-item strong {
+            display: block;
+            font-size: 12px;
+        }
+
+        .contact-item span {
+            color: #765f4d;
+            font-size: 13px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #3b2416;
+            color: #d8c8b8;
+        }
+
+        .footer-main {
+            padding: 50px 0 35px;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand h2 {
+            color: #fffaf3;
+            font-size: 22px;
+        }
+
+        .footer-brand p {
+            max-width: 400px;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 12px;
+
+            color: white;
+            font-size: 12px;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-col a {
+            display: block;
+
+            margin: 6px 0;
+
+            color: #d8c8b8;
+            font-size: 13px;
+        }
+
+        .footer-col a:hover {
+            color: #c65d16;
+        }
+
+        .footer-bottom {
+            padding: 18px 0;
+
+            border-top: 1px solid #5b4636;
+
+            display: flex;
+            justify-content: space-between;
+
+            color: #a99685;
+            font-size: 11px;
+        }
+
+
+        /* ================= BACK TO TOP ================= */
+
+        .back-top {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            background: #3b2416;
+            color: white;
+
+            cursor: pointer;
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition: .2s;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+
+                top: 70px;
+                left: 20px;
+                right: 20px;
+
+                display: none;
+                flex-direction: column;
+
+                padding: 15px;
+
+                background: #fffaf3;
+                border: 1px solid #d8c8b8;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero-visual {
+                justify-content: flex-start;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .container {
+                width: min(100% - 30px, 1100px);
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+            .hero-copy h1 {
+                font-size: 52px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-meta {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .portrait-frame {
+                width: 250px;
+                height: 320px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<header class="navbar">
-    <div class="container nav-inner">
-        <a href="#home" class="brand">
-            <strong>Ilhamcp511</strong>
-            <span>Academic Portfolio</span>
-        </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    <!-- ================= NAVBAR ================= -->
 
-        <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a class="active" href="#home">Beranda</a></li>
-                <li><a href="#about">Tentang</a></li>
-                <li><a href="#education">Pendidikan</a></li>
-                <li><a href="#research">Penelitian</a></li>
-                <li><a href="#publications">Publikasi</a></li>
-                <li><a href="#gallery">Galeri</a></li>
-                <li><a href="#contact">Kontak</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header class="navbar">
 
-<main>
+        <div class="container nav-inner">
 
-<section class="hero" id="home">
-    <div class="container hero-grid">
-        <div class="hero-copy">
-            <div class="eyebrow">Profil Akademik</div>
-            <h1>Ilham  <span>Cahya Purnama.</span></h1>
-            <p>
-                Mahasiswa Fisika dan pembelajar yang memiliki ketertarikan pada ilmu pengetahuan,
-                penelitian, teknologi, serta pengembangan solusi berbasis sains.
-            </p>
+            <a href="#home" class="brand">
 
-            <div class="hero-actions">
-                <a class="btn btn-primary" href="#about">Tentang Saya →</a>
-                <a class="btn btn-outline" href="#research">Lihat Penelitian</a>
-            </div>
+                <strong>
+                    Ilhamcp511
+                </strong>
 
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <strong>Bidang</strong>
-                    <span>Fisika</span>
-                </div>
-                <div class="meta-item">
-                    <strong>Institusi</strong>
-                    <span>Universitas Pendidikan Indonesia</span>
-                </div>
-                <div class="meta-item">
-                    <strong>Lokasi</strong>
-                    <span>Bandung, Indonesia</span>
-                </div>
-            </div>
+                <span>
+                    Personal Portfolio
+                </span>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka menu">
+
+                ☰
+
+            </button>
+
+
+            <nav>
+
+                <ul class="nav-links" id="navLinks">
+
+                    <li>
+                        <a class="active" href="#home">
+                            Beranda
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            Tentang
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#gallery">
+                            Galeri
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#schedule">
+                            Jadwal
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Kontak
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
         </div>
 
-        <div class="hero-visual">
-            <div class="portrait-frame">
-                <img src="image/profil.jpg" alt="Foto Profil Ilham Cahya Purnama" class="portrait-image">
-            </div>
-            <span class="leaf one"></span>
-            <span class="leaf two"></span>
-            <span class="leaf three"></span>
-        </div>
-    </div>
-</section>
-
-<section class="section about" id="about">
-    <div class="container about-grid">
-        <div class="about-label">
-            <div class="eyebrow">Tentang</div>
-            <h2>Tentang<br>Saya.</h2>
-        </div>
-
-        <div class="about-card">
-            <p>
-                Saya adalah mahasiswa yang memiliki ketertarikan pada proses belajar,
-                penelitian, dan penerapan ilmu pengetahuan untuk memahami berbagai
-                permasalahan di sekitar.
-            </p>
-            <p>
-                Website ini menjadi ruang untuk mendokumentasikan perjalanan akademik,
-                pengalaman, proyek, publikasi, kegiatan, serta gagasan yang sedang
-                dikembangkan.
-            </p>
-
-            <div class="quote">
-                “Belajar bukan hanya memahami apa yang sudah diketahui,
-                tetapi juga berani mencari tahu apa yang belum diketahui.”
-            </div>
-
-            <p>
-                Fokus saya terus berkembang melalui perkuliahan, eksperimen,
-                kegiatan penelitian, kolaborasi, dan berbagai proyek berbasis sains
-                serta teknologi.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="section" id="education">
-    <div class="container">
-        <div class="section-heading">
-            <div class="eyebrow">Perjalanan Akademik</div>
-            <h2>Pendidikan & Pengalaman</h2>
-            <p>
-                Beberapa tahapan pendidikan dan pengalaman yang membentuk perjalanan akademik.
-            </p>
-        </div>
-
-        <div class="timeline">
+    </header>
 
 
-            <article class="timeline-item">
-                <div class="timeline-year">2025 - Sekarang</div>
-                <div class="timeline-content">
-                    <h3>Program Studi Fisika</h3>
-                    <div class="place">Universitas Pendidikan Indonesia</div>
-                    <p>
-                        Mempelajari fisika dasar, matematika, eksperimen, pemrograman,
-                        analisis data, dan bidang-bidang fisika terapan.
-                    </p>
-                </div>
-            </article>
 
-            <article class="timeline-item">
-                <div class="timeline-year">2024</div>
-                <div class="timeline-content">
-                    <h3>Pendidikan Sebelumnya</h3>
-                    <div class="place">SMA Negeri 1 Sariwangi, Kab.Tasikmalaya, Jawa Barat, Indonesia</div>
-                    <p>
-                        Tahap pendidikan yang menjadi fondasi untuk melanjutkan studi
-                        dan mengembangkan minat pada bidang sains.
-                    </p>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="section research" id="research">
-    <div class="container">
-        <div class="section-heading">
-            <div class="eyebrow">Eksplorasi</div>
-            <h2>Minat Penelitian</h2>
-            <p>
-                Beberapa bidang yang sedang dipelajari dan dikembangkan sebagai bagian
-                dari perjalanan akademik.
-            </p>
-        </div>
-
-        <div class="research-grid">
-            <article class="research-card">
-                <div class="research-number">01 / PHYSICS</div>
-                <div class="research-icon">◈</div>
-                <h3>Fisika</h3>
-                <p>
-                    Eksplorasi konsep fisika, eksperimen, pemodelan, dan penerapannya
-                    dalam permasalahan nyata.
-                </p>
-            </article>
-
-            <article class="research-card">
-                <div class="research-number">02 / ASTRONOMY</div>
-                <div class="research-icon">◇</div>
-                <h3>Astronomi</h3>
-                <p>
-                        Ketertarikan terhadap langit, benda langit, dan fenomena alam semesta melalui pengamatan dan penelitian.
-                </p>
-            </article>
-
-            <article class="research-card">
-                <div class="research-number">03 / COMPUTATION</div>
-                <div class="research-icon">⌘</div>
-                <h3>Komputasi & Data</h3>
-                <p>
-                    Pemanfaatan pemrograman, analisis data, dan model komputasi
-                    untuk mendukung penelitian.
-                </p>
-            </article>
-
-            <article class="research-card">
-                <div class="research-number">04 / INSTRUMENTATION</div>
-                <div class="research-icon">△</div>
-                <h3>Instrumentasi</h3>
-                <p>
-                    Pengembangan sistem pengukuran dan teknologi untuk memperoleh
-                    data eksperimen secara lebih efektif.
-                </p>
-            </article>
-
-            <article class="research-card wide">
-                <div class="research-number">05 / APPLIED SCIENCE</div>
-                <div class="research-icon">✦</div>
-                <h3>Sains Terapan & Teknologi</h3>
-                <p>
-                    Menghubungkan konsep sains dengan teknologi untuk menghasilkan
-                    solusi yang dapat diterapkan pada kebutuhan masyarakat dan lingkungan.
-                </p>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="featured">
-    <div class="container featured-grid">
-        <div>
-            <div class="eyebrow">Proyek Unggulan</div>
-            <h2>Featured Research</h2>
-            <p class="featured-intro">
-                Ruang untuk menampilkan satu penelitian atau proyek yang sedang
-                menjadi fokus utama.
-            </p>
-        </div>
-
-        <article class="featured-box">
-            <span class="tag">Project 01</span>
-            <h3>Sistem Informasi Risiko Berbasis Sains & Data</h3>
-            <p>
-                Contoh deskripsi proyek. Bagian ini dapat diganti dengan penelitian,
-                website, eksperimen, atau proyek akademik yang ingin ditonjolkan.
-            </p>
-
-            <div class="featured-meta">
-                <span>2026</span>
-                <span>Research & Technology</span>
-                <span>Indonesia</span>
-            </div>
-
-            <div style="margin-top:24px">
-                <a href="#publications" class="btn btn-light">Lihat Detail →</a>
-            </div>
-        </article>
-    </div>
-</section>
-
-<section class="section" id="publications">
-    <div class="container">
-        <div class="section-heading">
-            <div class="eyebrow">Karya</div>
-            <h2>Publikasi & Proyek Terbaru</h2>
-            <p>
-                Daftar publikasi, laporan, proyek, atau karya akademik yang dapat
-                ditambahkan secara berkala.
-            </p>
-        </div>
-
-        <div class="publication-list">
-            <article class="publication">
-                <div class="pub-number">00</div>
-                <div>
-                    <h3>None</h3>
-                    <p>-</p>
-                </div>
-                <div class="pub-year">2026</div>
-            </article>
-
-            
-        </div>
-    </div>
-</section>
-<section class="section gallery" id="gallery">
-    <div class="container">
-        <div class="section-heading">
-            <div class="eyebrow">Dokumentasi</div>
-            <h2>Galeri</h2>
-            <p>
-                Dokumentasi kegiatan akademik, eksperimen, seminar, proyek, dan aktivitas lainnya.
-            </p>
-        </div>
-
-        <div class="gallery-grid">
-            <article class="gallery-card">
-                <div class="gallery-image">
-                    <img src="image/kegiatan-1.jpg" alt="Kegiatan praktikum">
-                </div>
-                <div class="gallery-caption">
-                    <h3>Eksperimen Laboratorium</h3>
-                    <p>Dokumentasi kegiatan eksperimen.</p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <div class="gallery-image">
-                    <img src="image/kegiatan-2.jpg" alt="Kuliah olahraga dan kebugaran">
-                </div>
-                <div class="gallery-caption">
-                    <h3>Olahraga dan Kebugaran</h3>
-                    <p>Dokumentasi kuliah olahraga dan kebugaran.</p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <div class="gallery-image">
-                    <img src="image/kegiatan-3.jpg" alt="Kuliah Lapangan">
-                </div>
-                <div class="gallery-caption">
-                    <h3>Kuliah Lapangan</h3>
-                    <p>Dokumentasi kuliah lapangan KDBA di Imah noong dalam mengamati benda langit</p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <div class="gallery-image">
-                    <img src="image/kegiatan-4.jpg" alt="Proyek">
-                </div>
-                <div class="gallery-caption">
-                    <h3>Kepanitiaan</h3>
-                    <p>kegiatan panitiaan acara PASOSORE</p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <div class="gallery-image">
-                    <img src="image/kegiatan-5.jpg" alt="Observasi Lapangan">
-                </div>
-                <div class="gallery-caption">
-                    <h3>Perayaan</h3>
-                    <p>Ikut merayakan pengukuhan Guru Besar.</p>
-                </div>
-            </article>
-
-            <article class="gallery-card">
-                <div class="gallery-image">
-                    <img src="image/kegiatan-6.jpg" alt="Kegiatan Akademik">
-                </div>
-                <div class="gallery-caption">
-                    <h3>Kegiatan Akademik</h3>
-                    <p>Aktivitas dan kolaborasi akademik.</p>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
+    <main>
 
 
-<section class="section" id="schedule">
-    <div class="container">
-        <div class="section-heading">
-            <div class="eyebrow">Agenda</div>
-            <h2>Jadwal Kuliah</h2>
-            <p>
-                Contoh jadwal kuliah yang dapat diperbarui sesuai kebutuhan.
-            </p>
-        </div>
+        <!-- ================= BERANDA ================= -->
 
-        <div class="schedule-wrap">
-            <table class="schedule">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Hari</th>
-                        <th>Waktu</th>
-                        <th>Kuliah</th>
-                        <th>Tempat</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td class="date">Senin</td>
-                        <td>07:00 - 08:40</td>
-                        <td class="event-name">Fisika Modern</td>
-                        <td>JICA lt3.305</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>02</td>
-                        <td class="date">Senin</td>
-                        <td>13:00 - 15:30</td>
-                        <td class="event-name">Elektronika Analog</td>
-                        <td>JICA lt3.Lab Elektronika</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>03</td>
-                        <td class="date">Selasa</td>
-                        <td>08:40 - 10:20</td>
-                        <td class="event-name">Fisika Modern</td>
-                        <td>JICA lt3.302</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>04</td>
-                        <td class="date">Rabu</td>
-                        <td>08:40 - 10:20</td>
-                        <td class="event-name">Olahraga dan Kebugaran</td>
-                        <td>Gymnasium</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>05</td>
-                        <td class="date">Rabu</td>
-                        <td>10:20 - 12:00</td>
-                        <td class="event-name">Seminar Pendidikan Agama Islam</td>
-                        <td>JICA lt3.304</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>06</td>
-                        <td class="date">Rabu</td>
-                        <td>13:00 - 14:40</td>
-                        <td class="event-name">Teknologi Informasi dan Komunikasi</td>
-                        <td>JICA lt4.402</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>07</td>
-                        <td class="date">Kamis</td>
-                        <td>08:40 - 10:20</td>
-                        <td class="event-name">Mekanika</td>
-                        <td>JICA lt3.302</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>08</td>
-                        <td class="date">Kamis</td>
-                        <td>13:00 - 15:30</td>
-                        <td class="event-name">Matematika Fisika II</td>
-                        <td>fpmipa-C lt3.302</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>09</td>
-                        <td class="date">Jum'at</td>
-                        <td>07:00 - 08:40</td>
-                        <td class="event-name">Landasan Pendidikan</td>
-                        <td>Gedung FPMIPA-B lt3..304</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td class="date">Jum'at</td>
-                        <td>13:00 - 14:40</td>
-                        <td class="event-name">Mekanika</td>
-                        <td>JICA lt3.305</td>
-                        <td><span class="status">PROSES</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
+        <section class="hero" id="home">
 
-<section class="section contact" id="contact">
-    <div class="container contact-grid">
-        <div class="contact-copy">
-            <div class="eyebrow">Hubungi Saya</div>
-            <h2>Mari Terhubung.</h2>
-            <p>
-                Terbuka untuk diskusi akademik, kolaborasi penelitian, proyek,
-                kegiatan mahasiswa, dan pertukaran ide.
-            </p>
+            <div class="container hero-grid">
 
-            <div class="contact-list">
-                <div class="contact-item">
-                    <div class="contact-icon">@</div>
-                    <div>
-                        <strong>Email</strong>
-                        <span>ilhamphy5@student.upi.edu</span>
+
+                <div class="hero-copy">
+
+                    <div class="eyebrow">
+                        Profil Pribadi
                     </div>
-                </div>
 
-                <div class="contact-item">
-                    <div class="contact-icon">ig</div>
-                    <div>
-                        <strong>Instagram</strong>
-                        <span>@iamm00nlight_</span>
+
+                    <h1>
+
+                        Ilham
+                        <span>Cahya Purnama.</span>
+
+                    </h1>
+
+
+                    <p>
+                        Mahasiswa Fisika yang tertarik pada
+                        sains, teknologi, pemrograman,
+                        dan pengolahan data.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            class="btn btn-primary"
+                            href="#about">
+
+                            Tentang Saya →
+
+                        </a>
+
+
+                        <a
+                            class="btn btn-outline"
+                            href="#gallery">
+
+                            Lihat Galeri
+
+                        </a>
+
                     </div>
+
+
+                    <div class="hero-meta">
+
+
+                        <div class="meta-item">
+
+                            <strong>
+                                Bidang
+                            </strong>
+
+                            <span>
+                                Fisika
+                            </span>
+
+                        </div>
+
+
+                        <div class="meta-item">
+
+                            <strong>
+                                Institusi
+                            </strong>
+
+                            <span>
+                                Universitas Pendidikan Indonesia
+                            </span>
+
+                        </div>
+
+
+                        <div class="meta-item">
+
+                            <strong>
+                                Lokasi
+                            </strong>
+
+                            <span>
+                                Bandung, Indonesia
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
                 </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="portrait-frame">
+
+                        <img
+                            src="image/profil.jpg"
+                            alt="Foto Profil Ilham Cahya Purnama">
+
+                    </div>
+
+                </div>
+
+
             </div>
-        </div>  
-    </div>
-</section>
 
-</main>
+        </section>
 
-<footer>
-    <div class="container footer-main">
-        <div class="footer-brand">
-            <h2>ilham cahya purnama</h2>
-            <p>
-                Personal academic portfolio untuk mendokumentasikan pendidikan,
-                penelitian, publikasi, proyek, dan perjalanan belajar.
-            </p>
+
+
+        <!-- ================= TENTANG ================= -->
+
+        <section
+            class="section about"
+            id="about">
+
+            <div class="container about-grid">
+
+
+                <div class="about-label">
+
+                    <div class="eyebrow">
+                        Tentang
+                    </div>
+
+                    <h2>
+                        Tentang<br>
+                        Saya.
+                    </h2>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <p>
+                        Saya adalah mahasiswa Fisika di
+                        Universitas Pendidikan Indonesia.
+                        Saya tertarik mempelajari bagaimana
+                        konsep fisika dapat dikombinasikan
+                        dengan teknologi dan pemrograman
+                        untuk menyelesaikan permasalahan nyata.
+                    </p>
+
+
+                    <p>
+                        Website ini menjadi ruang untuk
+                        mendokumentasikan perjalanan,
+                        aktivitas, kegiatan, dan berbagai
+                        hal yang saya kerjakan selama masa
+                        perkuliahan.
+                    </p>
+
+
+                    <div class="quote">
+
+                        “Belajar bukan hanya memahami apa
+                        yang sudah diketahui, tetapi juga
+                        berani mencari tahu apa yang belum
+                        diketahui.”
+
+                    </div>
+
+
+                    <p>
+                        Fokus saya terus berkembang melalui
+                        perkuliahan, eksperimen, kegiatan,
+                        proyek, dan berbagai pengalaman
+                        selama menjadi mahasiswa.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= GALERI ================= -->
+
+        <section
+            class="section gallery"
+            id="gallery">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Dokumentasi
+                    </div>
+
+                    <h2>
+                        Galeri
+                    </h2>
+
+                    <p>
+                        Dokumentasi kegiatan akademik,
+                        eksperimen, kegiatan mahasiswa,
+                        dan aktivitas lainnya.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery-grid">
+
+
+                    <article class="gallery-card">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="image/kegiatan-1.jpg"
+                                alt="Kegiatan praktikum">
+
+                        </div>
+
+                        <div class="gallery-caption">
+
+                            <h3>
+                                Eksperimen Laboratorium
+                            </h3>
+
+                            <p>
+                                Dokumentasi kegiatan eksperimen.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="gallery-card">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="image/kegiatan-2.jpg"
+                                alt="Kuliah olahraga dan kebugaran">
+
+                        </div>
+
+                        <div class="gallery-caption">
+
+                            <h3>
+                                Olahraga dan Kebugaran
+                            </h3>
+
+                            <p>
+                                Dokumentasi kuliah olahraga dan kebugaran.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="gallery-card">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="image/kegiatan-3.jpg"
+                                alt="Kuliah Lapangan">
+
+                        </div>
+
+                        <div class="gallery-caption">
+
+                            <h3>
+                                Kuliah Lapangan
+                            </h3>
+
+                            <p>
+                                Dokumentasi kuliah lapangan KDBA
+                                di Imah Noong dalam mengamati benda langit.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="gallery-card">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="image/kegiatan-4.jpg"
+                                alt="Kepanitiaan">
+
+                        </div>
+
+                        <div class="gallery-caption">
+
+                            <h3>
+                                Kepanitiaan
+                            </h3>
+
+                            <p>
+                                Kegiatan kepanitiaan acara PASOSORE.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="gallery-card">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="image/kegiatan-5.jpg"
+                                alt="Perayaan">
+
+                        </div>
+
+                        <div class="gallery-caption">
+
+                            <h3>
+                                Perayaan
+                            </h3>
+
+                            <p>
+                                Ikut merayakan pengukuhan Guru Besar.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="gallery-card">
+
+                        <div class="gallery-image">
+
+                            <img
+                                src="image/kegiatan-6.jpg"
+                                alt="Kegiatan Akademik">
+
+                        </div>
+
+                        <div class="gallery-caption">
+
+                            <h3>
+                                Kegiatan Akademik
+                            </h3>
+
+                            <p>
+                                Aktivitas dan kolaborasi akademik.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= JADWAL ================= -->
+
+        <section
+            class="section"
+            id="schedule">
+
+            <div class="container">
+
+
+                <div class="section-heading">
+
+                    <div class="eyebrow">
+                        Agenda
+                    </div>
+
+                    <h2>
+                        Jadwal Kuliah
+                    </h2>
+
+                    <p>
+                        Jadwal kegiatan perkuliahan.
+                    </p>
+
+                </div>
+
+
+                <div class="schedule-wrap">
+
+                    <table class="schedule">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    No.
+                                </th>
+
+                                <th>
+                                    Hari
+                                </th>
+
+                                <th>
+                                    Waktu
+                                </th>
+
+                                <th>
+                                    Kuliah
+                                </th>
+
+                                <th>
+                                    Tempat
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+
+                            <tr>
+
+                                <td>01</td>
+
+                                <td class="date">
+                                    Senin
+                                </td>
+
+                                <td>
+                                    07:00 - 08:40
+                                </td>
+
+                                <td class="event-name">
+                                    Fisika Modern
+                                </td>
+
+                                <td>
+                                    JICA lt3.305
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>02</td>
+
+                                <td class="date">
+                                    Senin
+                                </td>
+
+                                <td>
+                                    13:00 - 15:30
+                                </td>
+
+                                <td class="event-name">
+                                    Elektronika Analog
+                                </td>
+
+                                <td>
+                                    JICA lt3. Lab Elektronika
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>03</td>
+
+                                <td class="date">
+                                    Selasa
+                                </td>
+
+                                <td>
+                                    08:40 - 10:20
+                                </td>
+
+                                <td class="event-name">
+                                    Fisika Modern
+                                </td>
+
+                                <td>
+                                    JICA lt3.302
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>04</td>
+
+                                <td class="date">
+                                    Rabu
+                                </td>
+
+                                <td>
+                                    08:40 - 10:20
+                                </td>
+
+                                <td class="event-name">
+                                    Olahraga dan Kebugaran
+                                </td>
+
+                                <td>
+                                    Gymnasium
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>05</td>
+
+                                <td class="date">
+                                    Rabu
+                                </td>
+
+                                <td>
+                                    10:20 - 12:00
+                                </td>
+
+                                <td class="event-name">
+                                    Seminar Pendidikan Agama Islam
+                                </td>
+
+                                <td>
+                                    JICA lt3.304
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>06</td>
+
+                                <td class="date">
+                                    Rabu
+                                </td>
+
+                                <td>
+                                    13:00 - 14:40
+                                </td>
+
+                                <td class="event-name">
+                                    Teknologi Informasi dan Komunikasi
+                                </td>
+
+                                <td>
+                                    JICA lt4.402
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>07</td>
+
+                                <td class="date">
+                                    Kamis
+                                </td>
+
+                                <td>
+                                    08:40 - 10:20
+                                </td>
+
+                                <td class="event-name">
+                                    Mekanika
+                                </td>
+
+                                <td>
+                                    JICA lt3.302
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>08</td>
+
+                                <td class="date">
+                                    Kamis
+                                </td>
+
+                                <td>
+                                    13:00 - 15:30
+                                </td>
+
+                                <td class="event-name">
+                                    Matematika Fisika II
+                                </td>
+
+                                <td>
+                                    FPMIPA-C lt3.302
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>09</td>
+
+                                <td class="date">
+                                    Jum'at
+                                </td>
+
+                                <td>
+                                    07:00 - 08:40
+                                </td>
+
+                                <td class="event-name">
+                                    Landasan Pendidikan
+                                </td>
+
+                                <td>
+                                    Gedung FPMIPA-B lt3.304
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>10</td>
+
+                                <td class="date">
+                                    Jum'at
+                                </td>
+
+                                <td>
+                                    13:00 - 14:40
+                                </td>
+
+                                <td class="event-name">
+                                    Mekanika
+                                </td>
+
+                                <td>
+                                    JICA lt3.305
+                                </td>
+
+                                <td>
+                                    <span class="status">
+                                        PROSES
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section
+            class="section contact"
+            id="contact">
+
+            <div class="container contact-grid">
+
+
+                <div class="contact-copy">
+
+                    <div class="eyebrow">
+                        Hubungi Saya
+                    </div>
+
+                    <h2>
+                        Mari Terhubung.
+                    </h2>
+
+                    <p>
+                        Terbuka untuk diskusi, kolaborasi,
+                        kegiatan akademik, dan pertukaran ide.
+                    </p>
+
+
+                    <div class="contact-list">
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                @
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Email
+                                </strong>
+
+                                <span>
+                                    ilhamphy5@student.upi.edu
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                ig
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Instagram
+                                </strong>
+
+                                <span>
+                                    @iamm00nlight_
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-main">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    ilham cahya purnama
+                </h2>
+
+                <p>
+                    Personal portfolio untuk mendokumentasikan
+                    perjalanan, aktivitas, kegiatan, dan
+                    pengalaman selama perkuliahan.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h3>
+                    Navigasi
+                </h3>
+
+                <a href="#home">
+                    Beranda
+                </a>
+
+                <a href="#about">
+                    Tentang
+                </a>
+
+                <a href="#gallery">
+                    Galeri
+                </a>
+
+                <a href="#schedule">
+                    Jadwal
+                </a>
+
+                <a href="#contact">
+                    Kontak
+                </a>
+
+            </div>
+
+
         </div>
 
-        <div class="footer-col">
-            <h3>Navigasi</h3>
-            <a href="#about">Tentang</a>
-            <a href="#education">Pendidikan</a>
-            <a href="#research">Penelitian</a>
-            <a href="#publications">Publikasi</a>
+
+        <div class="container footer-bottom">
+
+            <span>
+                © <span id="year"></span>
+                Ilham Cahya Purnama
+            </span>
+
+            <span>
+                Personal Portfolio · Indonesia
+            </span>
+
         </div>
 
-        <div class="footer-col">
-            <h3>Lainnya</h3>
-            <a href="#gallery">Galeri</a>
-            <a href="#schedule">Jadwal</a>
-            <a href="#contact">Kontak</a>
-            <a href="#home">Kembali ke atas ↑</a>
-        </div>
-    </div>
+    </footer>
 
-    <div class="container footer-bottom">
-        <span>© <span id="year"></span> ilhamcp511. All rights reserved.</span>
-        <span>Academic Portfolio · Indonesia</span>
-    </div>
-</footer>
 
-<button class="back-top" id="backTop" aria-label="Kembali ke atas">↑</button>
 
-<script>
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-const backTop = document.getElementById("backTop");
-const contactForm = document.getElementById("contactForm");
-const formMessage = document.getElementById("formMessage");
+    <!-- ================= BACK TO TOP ================= -->
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-});
+    <button
+        class="back-top"
+        id="backTop"
+        aria-label="Kembali ke atas">
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-    });
-});
+        ↑
 
-window.addEventListener("scroll", () => {
-    backTop.classList.toggle("show", window.scrollY > 500);
+    </button>
 
-    const sections = document.querySelectorAll("main section[id]");
-    const links = document.querySelectorAll(".nav-links a");
 
-    let current = "home";
 
-    sections.forEach(section => {
-        const top = section.offsetTop - 130;
-        if (window.scrollY >= top) current = section.id;
-    });
+    <!-- ================= JAVASCRIPT ================= -->
 
-    links.forEach(link => {
-        link.classList.toggle(
-            "active",
-            link.getAttribute("href") === "#" + current
-        );
-    });
-});
+    <script>
 
-backTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+        const menuToggle =
+            document.getElementById("menuToggle");
 
-contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    formMessage.style.display = "block";
-    contactForm.reset();
-});
+        const navLinks =
+            document.getElementById("navLinks");
 
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+        const backTop =
+            document.getElementById("backTop");
+
+
+        /* Mobile menu */
+
+        menuToggle.addEventListener("click", () => {
+
+            navLinks.classList.toggle("open");
+
+        });
+
+
+        /* Tutup menu setelah memilih navigasi */
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("open");
+
+            });
+
+        });
+
+
+        /* Active navigation + tombol kembali ke atas */
+
+        window.addEventListener("scroll", () => {
+
+            backTop.classList.toggle(
+                "show",
+                window.scrollY > 500
+            );
+
+
+            const sections =
+                document.querySelectorAll(
+                    "main section[id]"
+                );
+
+            const links =
+                document.querySelectorAll(
+                    ".nav-links a"
+                );
+
+
+            let current = "home";
+
+
+            sections.forEach(section => {
+
+                const top =
+                    section.offsetTop - 120;
+
+                if (window.scrollY >= top) {
+
+                    current = section.id;
+
+                }
+
+            });
+
+
+            links.forEach(link => {
+
+                link.classList.toggle(
+                    "active",
+                    link.getAttribute("href")
+                    === "#" + current
+                );
+
+            });
+
+        });
+
+
+        /* Back to top */
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        });
+
+
+        /* Tahun otomatis */
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
+
 </html>
