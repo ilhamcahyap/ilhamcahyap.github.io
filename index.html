@@ -10,6 +10,10 @@
 
     <title>Ilham Cahya Purnama</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+
     <style>
 
         /* ================= RESET ================= */
@@ -657,6 +661,19 @@
             }
         }
 
+        /* Shared neobrutalism system, aligned with the main portfolio page. */
+        :root{--nb-paper:#f8f3e8;--nb-surface:#fffdf7;--nb-ink:#171717;--nb-accent:#ffcb3d;--nb-shadow:7px 7px 0 var(--nb-ink)}
+        html{scroll-padding-top:92px} body{font-family:"DM Sans",Arial,sans-serif;background:var(--nb-paper);color:var(--nb-ink);line-height:1.55;overflow-x:hidden} body::selection{background:var(--nb-accent)}
+        .eyebrow{display:none}.section{padding:108px 0}.section-heading{margin-bottom:48px}.section-heading h2,.hero-copy h1,.about-label h2,.timeline-content h3,.research-card h3,.featured h2,.featured-box h3,.publication h3,.gallery-caption h3,.contact-copy h2,.footer-brand h2,.brand strong{font-family:"Archivo Black",Impact,sans-serif;letter-spacing:-.035em;color:var(--nb-ink)}.section-heading h2{font-size:clamp(2.25rem,5vw,4.6rem);line-height:.98}.section-heading p,.hero-copy>p,.contact-copy>p{color:var(--nb-ink);font-size:1.05rem}
+        .navbar{background:var(--nb-paper);border-bottom:3px solid var(--nb-ink)}.nav-inner{min-height:82px}.brand span{color:var(--nb-ink);font-size:.71rem;letter-spacing:0;text-transform:none}.nav-links a{padding:29px 0;color:var(--nb-ink);font-weight:700}.nav-links a:hover,.nav-links a.active{color:var(--nb-ink)}.menu-toggle{border:3px solid var(--nb-ink);background:var(--nb-accent);padding:8px 12px}
+        .hero{min-height:700px;padding:88px 0;background:var(--nb-paper);border-bottom:3px solid var(--nb-ink)}.hero-copy h1{margin:0 0 24px;font-size:clamp(3.65rem,8.8vw,8.2rem);line-height:.86;text-transform:uppercase}.hero-copy h1 span{color:var(--nb-ink)}.hero-meta{border-top:3px solid var(--nb-ink)}.meta-item strong,.meta-item span{color:var(--nb-ink)}.portrait-frame{padding:10px;border:3px solid var(--nb-ink);box-shadow:14px 14px 0 var(--nb-accent);transform:rotate(2deg)}
+        .btn{border:3px solid var(--nb-ink);border-radius:0;box-shadow:var(--nb-shadow);transition:transform .15s ease,box-shadow .15s ease}.btn-primary{background:var(--nb-accent);color:var(--nb-ink)}.btn-outline{background:var(--nb-surface);color:var(--nb-ink)}.btn:hover{transform:translate(4px,4px);box-shadow:none}.btn-primary:hover{background:var(--nb-accent);color:var(--nb-ink)}.btn-outline:hover{background:var(--nb-surface);color:var(--nb-ink)}
+        .about,.gallery{background:var(--nb-surface);border-color:var(--nb-ink)}.about-label h2{font-size:clamp(2.6rem,5vw,4.8rem);line-height:.92}.about-card,.timeline-content,.research-card,.gallery-card,.contact-form{background:var(--nb-paper);border:3px solid var(--nb-ink);box-shadow:var(--nb-shadow)}.quote{border:0;border-top:3px solid var(--nb-ink);border-bottom:3px solid var(--nb-ink);background:transparent;font-family:"Archivo Black",Impact,sans-serif;color:var(--nb-ink)}.timeline::before{width:3px;background:var(--nb-ink)}.timeline-content::before{border:3px solid var(--nb-ink);border-radius:0;background:var(--nb-accent);box-shadow:none}.timeline-year,.timeline-content .place,.timeline-content p{color:var(--nb-ink)}
+        .research{background:var(--nb-accent);border-color:var(--nb-ink)}.research-grid{gap:22px}.research-card{padding:30px}.research-card:nth-child(1){grid-column:span 2;background:var(--nb-ink)}.research-card:nth-child(1) h3,.research-card:nth-child(1) p{color:var(--nb-surface)}.research-number,.research-icon{display:none}.research-card h3,.research-card p{color:var(--nb-ink)}.featured{background:var(--nb-ink)}.featured h2,.featured-intro{color:var(--nb-surface)}.featured-box{background:var(--nb-surface);border:3px solid var(--nb-ink);box-shadow:10px 10px 0 var(--nb-accent)}.featured-box h3,.featured-box p,.featured-meta{color:var(--nb-ink)}.featured-meta{border-top:3px solid var(--nb-ink)}.featured-box .tag{background:transparent;color:var(--nb-ink)}
+        .publication-list{border-top:3px solid var(--nb-ink)}.publication{grid-template-columns:1fr auto;border-bottom:3px solid var(--nb-ink)}.pub-number{display:none}.publication h3,.publication p,.pub-year{color:var(--nb-ink)}.gallery-grid{grid-template-columns:1.1fr .9fr .9fr;gap:22px}.gallery-card{overflow:visible;box-shadow:none}.gallery-card:nth-child(1){grid-row:span 2;background:var(--nb-accent)}.gallery-image{border-bottom:3px solid var(--nb-ink);background:var(--nb-ink)}.gallery-image img{height:100%;object-fit:cover}.gallery-card:nth-child(1) .gallery-image{height:calc(100% - 83px);aspect-ratio:auto}.gallery-caption h3,.gallery-caption p{color:var(--nb-ink)}
+        .schedule-wrap{border:3px solid var(--nb-ink);box-shadow:var(--nb-shadow)}.schedule th,.schedule td{border-bottom:2px solid var(--nb-ink);color:var(--nb-ink)}.schedule th{background:var(--nb-accent);color:var(--nb-ink);letter-spacing:0}.schedule tr:hover td{background:#fff0bd}.date,.event-name{color:var(--nb-ink)}.status{border:2px solid var(--nb-ink);border-radius:0;color:var(--nb-ink);background:var(--nb-accent);letter-spacing:0}.contact-icon{border:3px solid var(--nb-ink);border-radius:0;background:var(--nb-accent);color:var(--nb-ink)}
+        footer{background:var(--nb-ink);color:var(--nb-surface)}.footer-brand h2,.footer-col h3,.footer-brand p,.footer-col a,.footer-bottom{color:var(--nb-surface)}.footer-bottom{border-top:3px solid var(--nb-surface)}.back-top{border:3px solid var(--nb-ink);border-radius:0;color:var(--nb-ink);background:var(--nb-accent);box-shadow:5px 5px 0 var(--nb-ink)}
+        .menu-toggle:focus-visible,.btn:focus-visible,.nav-links a:focus-visible,.back-top:focus-visible{outline:3px solid var(--nb-ink);outline-offset:3px}@media(max-width:900px){.nav-links{border:3px solid var(--nb-ink);background:var(--nb-surface);box-shadow:var(--nb-shadow)}.research-card:nth-child(1){grid-column:auto}.gallery-grid{grid-template-columns:repeat(2,1fr)}.gallery-card:nth-child(1){grid-row:auto}.gallery-card:nth-child(1) .gallery-image{height:auto;aspect-ratio:4/3}}@media(max-width:680px){.section{padding:76px 0}.hero{padding:64px 0}.hero-copy h1{font-size:clamp(3.1rem,15vw,5.2rem)}.gallery-grid{grid-template-columns:1fr}.portrait-frame{box-shadow:10px 10px 0 var(--nb-accent)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
     </style>
 </head>
 
@@ -688,7 +705,7 @@
                 id="menuToggle"
                 aria-label="Buka menu">
 
-                ☰
+                Menu
 
             </button>
 
@@ -1349,7 +1366,7 @@
                                 </td>
 
                                 <td>
-                                    JICA lt4.405
+                                    JICA lt4.402
                                 </td>
 
                                 <td>
